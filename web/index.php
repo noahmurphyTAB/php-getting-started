@@ -23,7 +23,7 @@ $app->post('/', function(Request $request) {
           $user_id = $request->get('user_id');           // Slack user ID
           $slack_username = $request->get('user_name');  // Slack username
 
-  return "Hi there, command ".$command.", text ".$text.", user id ".$user_id.", username ".$slack_username;
+  return "Hello there! You just used command ".$command.", Your text was  ".$text.", your user id is".$user_id.", and your username is ".$slack_username;
 });
 
 $app->run();
