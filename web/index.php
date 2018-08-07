@@ -13,15 +13,15 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 
 // Our web handlers
 
-$app->get('/', function() use($app) {
+$app->post('/', function(Request $request) {
   ######## SLACK ###########
     
-          #$command = $_POST['command'];           // Slash command - should be /request
-          #$request = $_POST['text'];              // Text after Slash command
-          #$user_id = $_POST['user_id'];           // Slack user ID
-          #$slack_username = $_POST['user_name'];  // Slack username
+          $command = $request->get('command');           // Slash command - should be /request
+          $text = $request->get('text');              // Text after Slash command
+          $user_id = $request->get('user_id');           // Slack user ID
+          $slack_username = $request->get('user_name');  // Slack username
 
-  return "Hi there";
+  return "Hi there, command ".$command.", text ".$text.", user id ".$user_id.", username ".$slack_username;
 });
 
 $app->run();
