@@ -22,7 +22,7 @@ $app->post('/', function(Request $request) {
           $text = $request->get('text');              // Text after Slash command
           $user_id = $request->get('user_id');           // Slack user ID
           $slack_username = $request->get('user_name');  // Slack username
-           if ($command == "Hello There") {
+           if ($text == "Hello There") {
            return "General Kenobi";
            }
            else {
